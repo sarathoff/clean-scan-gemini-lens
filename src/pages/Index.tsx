@@ -7,7 +7,7 @@ import ManualEntry from "@/components/Scanner/ManualEntry";
 import IngredientsList from "@/components/Results/IngredientsList";
 import NutritionInfo from "@/components/Results/NutritionInfo";
 import ResultActions from "@/components/Results/ResultActions";
-import { ScanQrCode, Info } from "lucide-react";
+import { ScanQrCode, Info, Camera, FileText, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { analyzeImageIngredients, analyzeTextIngredients } from "@/services/geminiService";
@@ -128,7 +128,7 @@ const Index = () => {
         {scanningState === "ready" && (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold mb-4">CleanScan</h1>
+              <h1 className="text-3xl font-bold mb-4 font-dm-sans">CleanScan</h1>
               <p className="text-cleanscan-neutral-gray max-w-md mx-auto">
                 Analyze product ingredients instantly with AI. Scan a label or enter ingredients manually to get a detailed breakdown.
               </p>
@@ -151,18 +151,46 @@ const Index = () => {
               </div>
             )}
             
-            <div className="mt-12 max-w-md mx-auto">
-              <div className="flex items-center text-sm text-cleanscan-neutral-gray mb-3">
-                <div className="flex-grow h-px bg-cleanscan-light-gray"></div>
-                <span className="mx-3">Recent Scans</span>
-                <div className="flex-grow h-px bg-cleanscan-light-gray"></div>
-              </div>
+            {/* How to use section */}
+            <div className="mt-12 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h2 className="text-xl font-bold mb-4 font-dm-sans text-center">How to Use CleanScan</h2>
               
-              {/* Placeholder for recent scans - in a real app, these would be populated from localStorage */}
-              <div className="flex justify-center">
-                <p className="text-sm text-cleanscan-neutral-gray">
-                  Your recent scans will appear here
-                </p>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 bg-cleanscan-light-green p-2 rounded-full mr-4">
+                    <Camera className="w-5 h-5 text-cleanscan-green" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-1">Step 1: Scan or Input</h3>
+                    <p className="text-sm text-cleanscan-neutral-gray">
+                      Use your camera to scan a product ingredient label, or manually type in the ingredients list.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 bg-cleanscan-light-green p-2 rounded-full mr-4">
+                    <FileText className="w-5 h-5 text-cleanscan-green" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-1">Step 2: Review Analysis</h3>
+                    <p className="text-sm text-cleanscan-neutral-gray">
+                      Our AI will analyze the ingredients and provide you with detailed information about each ingredient.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 bg-cleanscan-light-green p-2 rounded-full mr-4">
+                    <ChevronRight className="w-5 h-5 text-cleanscan-green" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-1">Step 3: Make Informed Choices</h3>
+                    <p className="text-sm text-cleanscan-neutral-gray">
+                      Use the insight provided to determine if this product aligns with your health needs and preferences.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </>
