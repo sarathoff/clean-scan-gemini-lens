@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ScanQRCode } from "lucide-react";
+import { ScanQrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="container flex items-center justify-between h-16 px-4 mx-auto sm:px-6">
         <Link to="/" className="flex items-center">
-          <ScanQRCode className="w-6 h-6 mr-2 text-cleanscan-green" />
+          <ScanQrCode className="w-6 h-6 mr-2 text-cleanscan-green" />
           <span className="text-xl font-bold">CleanScan</span>
         </Link>
         <nav className="hidden sm:flex items-center space-x-6">

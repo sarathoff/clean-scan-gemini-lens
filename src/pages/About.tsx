@@ -1,7 +1,6 @@
-
 import React from "react";
 import Layout from "@/components/layout/Layout";
-import { ScanQRCode, ShieldCheck, Sparkles, Leaf } from "lucide-react";
+import { ScanQrCode, ShieldCheck, Sparkles, Leaf } from "lucide-react";
 
 const About = () => {
   return (
@@ -17,7 +16,7 @@ const About = () => {
             
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
               <div className="flex items-center mb-4">
-                <ScanQRCode className="w-6 h-6 mr-3 text-cleanscan-green" />
+                <ScanQrCode className="w-6 h-6 mr-3 text-cleanscan-green" />
                 <h2 className="text-xl font-semibold">Our Mission</h2>
               </div>
               <p className="mb-4">
@@ -31,7 +30,7 @@ const About = () => {
               <div className="bg-cleanscan-light-green rounded-lg p-5">
                 <div className="flex justify-center mb-4">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
-                    <ScanQRCode className="w-6 h-6 text-cleanscan-green" />
+                    <ScanQrCode className="w-6 h-6 text-cleanscan-green" />
                   </div>
                 </div>
                 <h3 className="text-lg font-medium text-center mb-2">Scan or Enter</h3>
