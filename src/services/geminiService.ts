@@ -1,11 +1,8 @@
-
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { AnalysisResult } from "@/types/ingredients";
 
-// This would be stored securely in a production environment
-// For demo purposes, we're using a placeholder API key
-// You need to replace this with a valid Google Gemini API key
-const API_KEY = "YOUR_GEMINI_API_KEY"; 
+// Initialize with the provided API key
+const API_KEY = "AIzaSyBTx0OoA_QQDIeGqix3yexrQhb0ytEKs6M";
 
 // Initialize the Gemini API client
 let genAI: GoogleGenerativeAI;
