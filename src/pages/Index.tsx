@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from "react";
 import Layout from "@/components/layout/Layout";
 import ScannerToggle from "@/components/Scanner/ScannerToggle";
@@ -160,7 +161,7 @@ const Index = () => {
               <div>
                 <CameraScanner onCapture={handleImageCapture} onError={(error) => setScanError(error)} />
                 
-                <div className="mt-4 text-center">
+                <div className="mt-4 flex justify-center">
                   <input 
                     type="file" 
                     ref={fileInputRef} 
