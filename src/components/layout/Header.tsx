@@ -16,7 +16,7 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16 px-4 mx-auto sm:px-6">
         <Link to="/" className="flex items-center">
           <ScanQrCode className="w-6 h-6 mr-2 text-cleanscan-green" />
-          <span className="text-xl font-bold font-dm-sans">CleanScan</span>
+          <span className="text-xl font-bold font-dm-sans">Under the Label</span>
         </Link>
         
         <NavigationMenu className="hidden sm:flex">
@@ -64,7 +64,7 @@ const Header = () => {
             <div className="flex items-center justify-between p-4 border-b">
               <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
                 <ScanQrCode className="w-6 h-6 mr-2 text-cleanscan-green" />
-                <span className="text-xl font-bold font-dm-sans">CleanScan</span>
+                <span className="text-xl font-bold font-dm-sans">Under the Label</span>
               </Link>
               <Button variant="ghost" className="p-2" onClick={toggleMobileMenu}>
                 <X className="w-6 h-6" />

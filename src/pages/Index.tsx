@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Layout from "@/components/layout/Layout";
 import ScannerToggle from "@/components/Scanner/ScannerToggle";
 import CameraScanner from "@/components/Scanner/CameraScanner";
@@ -7,7 +6,7 @@ import ManualEntry from "@/components/Scanner/ManualEntry";
 import IngredientsList from "@/components/Results/IngredientsList";
 import NutritionInfo from "@/components/Results/NutritionInfo";
 import ResultActions from "@/components/Results/ResultActions";
-import { ScanQrCode, Info, Camera, FileText, ChevronRight } from "lucide-react";
+import { ScanQrCode, Info, Camera, FileText, ChevronRight, ImageIcon, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { analyzeImageIngredients, analyzeTextIngredients } from "@/services/geminiService";
@@ -21,6 +20,7 @@ const Index = () => {
   const [scanError, setScanError] = useState<string | null>(null);
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
   const { toast } = useToast();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleScanModeToggle = (mode: "camera" | "manual") => {
     setScanMode(mode);
@@ -122,13 +122,33 @@ const Index = () => {
     }
   };
 
+  const handleFileUpload = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      if (e.target?.result) {
+        const imageData = e.target.result as string;
+        await handleImageCapture(imageData);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
   return (
     <Layout>
       <div className="container px-4 py-8 mx-auto sm:px-6">
         {scanningState === "ready" && (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold mb-4 font-dm-sans">CleanScan</h1>
+              <h1 className="text-3xl font-bold mb-4 font-dm-sans">Under the Label</h1>
               <p className="text-cleanscan-neutral-gray max-w-md mx-auto">
                 Analyze product ingredients instantly with AI. Scan a label or enter ingredients manually to get a detailed breakdown.
               </p>
@@ -137,7 +157,27 @@ const Index = () => {
             <ScannerToggle activeMode={scanMode} onToggle={handleScanModeToggle} />
             
             {scanMode === "camera" ? (
-              <CameraScanner onCapture={handleImageCapture} onError={(error) => setScanError(error)} />
+              <div>
+                <CameraScanner onCapture={handleImageCapture} onError={(error) => setScanError(error)} />
+                
+                <div className="mt-4 text-center">
+                  <input 
+                    type="file" 
+                    ref={fileInputRef} 
+                    accept="image/*" 
+                    onChange={handleFileChange} 
+                    className="hidden" 
+                  />
+                  <Button 
+                    onClick={handleFileUpload} 
+                    variant="outline"
+                    className="flex items-center gap-2"
+                  >
+                    <Upload size={16} />
+                    Upload from Gallery
+                  </Button>
+                </div>
+              </div>
             ) : (
               <ManualEntry onSubmit={handleTextSubmit} />
             )}
@@ -153,7 +193,7 @@ const Index = () => {
             
             {/* How to use section */}
             <div className="mt-12 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h2 className="text-xl font-bold mb-4 font-dm-sans text-center">How to Use CleanScan</h2>
+              <h2 className="text-xl font-bold mb-4 font-dm-sans text-center">How to Use Under the Label</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -163,7 +203,7 @@ const Index = () => {
                   <div>
                     <h3 className="font-medium mb-1">Step 1: Scan or Input</h3>
                     <p className="text-sm text-cleanscan-neutral-gray">
-                      Use your camera to scan a product ingredient label, or manually type in the ingredients list.
+                      Use your camera to scan a product ingredient label, upload from your gallery, or manually type in the ingredients list.
                     </p>
                   </div>
                 </div>
