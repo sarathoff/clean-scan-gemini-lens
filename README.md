@@ -1,73 +1,94 @@
-# Welcome to your Lovable project
+# Under The Label
 
-## Project info
+**Under The Label** is a skincare ingredient analyzer built with React and Gemini LLM. It helps users evaluate ingredients in products like face wash and soap by categorizing them as good, moderate, or bad, with detailed descriptions to make informed purchase decisions.
 
-**URL**: https://lovable.dev/projects/e61ef69f-91f1-4a1f-8337-6ba143f7dd70
+---
 
-## How can I edit this code?
+## Table of Contents
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+3. [Getting Started](#getting-started)
+4. [Installation](#installation)
+5. [Running the Project](#running-the-project)
+6. [Deployment](#deployment)
+7. [Contributing](#contributing)
+8. [License](#license)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e61ef69f-91f1-4a1f-8337-6ba143f7dd70) and start prompting.
+- **Ingredient Scanner**: Input or scan product ingredients (e.g., face wash, soap) for analysis.
+- **Ingredient Ratings**: Categorizes ingredients as good, moderate, or bad using Gemini LLM.
+- **Detailed Descriptions**: Provides explanations for each ingredient’s rating to guide purchases.
+- **User-Friendly Interface**: Responsive React-based UI for easy navigation on mobile and desktop.
+- **Fast Performance**: Powered by Vite for quick development and optimized builds.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React for dynamic UI components
+- **Bundler**: Vite for fast development and production builds
+- **AI**: Gemini LLM for ingredient analysis and rating
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel for hosting
+- **JavaScript**: Core language (TypeScript optional)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+To run the project locally, ensure you have the following:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Node.js** (v18 or higher)
+- **pnpm** (or npm/yarn)
+- A **Gemini LLM API key** for ingredient analysis
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/under-the-label.git
+   cd under-the-label
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd under-the-label
+   ```
+3. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+## Running the Project
+Run the project using the following command:
+```bash
+pnpm start
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
+Contributions are welcome! Please follow these steps:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-name
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m "Add feature-name"
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin feature-name
+    ```
+5. Open a pull request.
 
-**Use GitHub Codespaces**
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e61ef69f-91f1-4a1f-8337-6ba143f7dd70) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Contact
+For questions or feedback, please contact [your email or other contact information].

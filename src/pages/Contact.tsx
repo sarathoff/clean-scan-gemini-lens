@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import { useForm } from "react-hook-form";
@@ -71,7 +70,7 @@ const Contact = () => {
             <div>
               <h2 className="text-xl font-semibold mb-4">Get in Touch</h2>
               <p className="text-cleanscan-neutral-gray mb-6">
-                Have questions about CleanScan? Want to report an issue or suggest an improvement? We'd love to hear from you. Fill out this form and we'll get back to you as soon as possible.
+                Have questions about Under the Label? Want to report an issue or suggest an improvement? We'd love to hear from you. Fill out this form and we'll get back to you as soon as possible.
               </p>
               
               <div className="space-y-4">
@@ -81,7 +80,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-sm font-medium">Email</h3>
-                    <p className="text-sm text-cleanscan-neutral-gray">contact@cleanscan.app</p>
+                    <p className="text-sm text-cleanscan-neutral-gray">underthelabel.mailbox@gmail.com</p>
                   </div>
                 </div>
                 
@@ -90,8 +89,8 @@ const Contact = () => {
                     <MessageCircle className="w-5 h-5 text-cleanscan-green" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium">Support</h3>
-                    <p className="text-sm text-cleanscan-neutral-gray">support@cleanscan.app</p>
+                    <h3 className="text-sm font-medium">Promotions</h3>
+                    <p className="text-sm text-cleanscan-neutral-gray">underthelabel.mailbox@gmail.com</p>
                   </div>
                 </div>
               </div>
