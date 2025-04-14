@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import { Shield, Database, Eye, Lock } from "lucide-react";
@@ -6,7 +5,7 @@ import { Shield, Database, Eye, Lock } from "lucide-react";
 const Privacy = () => {
   return (
     <Layout>
-      <div className="container px-4 py-8 mx-auto sm:px-6">
+      <div className="container px-4 py-8 mx-auto sm:px-6"></div>
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
 
@@ -17,7 +16,7 @@ const Privacy = () => {
             </div>
             
             <p className="mb-6">
-              We at CleanScan ("we", "us", "our") respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our web application.
+              We at Under the Label ("we", "us", "our") respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our web application.
             </p>
             
             <div className="mb-8">
@@ -26,7 +25,7 @@ const Privacy = () => {
               </h2>
               
               <p className="mb-4">
-                When you use CleanScan, we collect the following types of information:
+                When you use Under the Label, we collect the following types of information:
               </p>
               
               <ul className="list-disc pl-6 mb-4 space-y-2">
@@ -88,7 +87,7 @@ const Privacy = () => {
               <h2 className="text-xl font-semibold mb-4">Cookies and Tracking</h2>
               
               <p className="mb-4">
-                CleanScan uses cookies and similar tracking technologies to enhance your user experience and collect usage data. We also use these technologies to serve relevant advertisements.
+                Under the Label uses cookies and similar tracking technologies to enhance your user experience and collect usage data. We also use these technologies to serve relevant advertisements.
               </p>
               
               <p>
@@ -150,15 +149,14 @@ const Privacy = () => {
               </p>
               
               <div className="mt-4 p-4 bg-cleanscan-light-green rounded-md">
-                <p className="font-medium">CleanScan</p>
-                <p>privacy@cleanscan.app</p>
+                <p className="font-medium">Under the Label</p>
+                <p>privacy@underthelabel.app</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </Layout>
-  );
+      </Layout>
+    );
 };
 
 export default Privacy;
